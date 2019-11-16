@@ -1,4 +1,4 @@
-# Base Android Architecture
+# MusicPlayerApp
 
 Architecture Design Pattern - MVVM (Model View ViewModel) 
 
