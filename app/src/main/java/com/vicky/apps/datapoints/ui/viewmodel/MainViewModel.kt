@@ -5,6 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.vicky.apps.datapoints.common.SchedulerProvider
 import com.vicky.apps.datapoints.data.remote.Repository
+import com.vicky.apps.datapoints.ui.model.SongsListResponse
 import io.reactivex.Single
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.rxkotlin.subscribeBy
@@ -16,7 +17,7 @@ class MainViewModel(private val repository: Repository,
 
 
 
-
+    private var data: List<SongsListResponse> = ArrayList()
     private val response: MutableLiveData<Boolean> = MutableLiveData()
 
     fun getSubscription():MutableLiveData<Boolean> = response
@@ -36,6 +37,7 @@ class MainViewModel(private val repository: Repository,
     fun getDataFromRemote() {
 
         compositeDisposable.add(generateApiCall().subscribeBy ( onSuccess = {
+            this.data = it
             response.postValue(true)
         }, onError = {
             Log.d("valuessss",it.message)
@@ -43,7 +45,7 @@ class MainViewModel(private val repository: Repository,
 
 
     }
-    fun generateApiCall():Single<List<Any>>{
+    fun generateApiCall():Single<List<SongsListResponse>>{
         return repository.getDataFromApi()
             .compose(schedulerProvider.getSchedulersForSingle())
     }
