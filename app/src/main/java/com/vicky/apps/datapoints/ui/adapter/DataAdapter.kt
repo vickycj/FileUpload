@@ -12,7 +12,7 @@ import com.vicky.apps.datapoints.R
 import com.vicky.apps.datapoints.ui.model.SongsListResponse
 
 
-class DataAdapter constructor(var data:List<SongsListResponse>) : RecyclerView.Adapter<DataAdapter.DataViewHolder>() {
+class DataAdapter constructor(var data:List<SongsListResponse>, val clickListener: (Int)-> Unit) : RecyclerView.Adapter<DataAdapter.DataViewHolder>() {
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DataViewHolder {
@@ -25,6 +25,7 @@ class DataAdapter constructor(var data:List<SongsListResponse>) : RecyclerView.A
     override fun onBindViewHolder(holder: DataViewHolder, position: Int) {
         holder.songName.text = data[position].song
         Picasso.get().load(data[position].coverImage).into(holder.imageView)
+        holder.imageView.setOnClickListener { clickListener(position) }
     }
 
     fun updateData(data: List<SongsListResponse>){
