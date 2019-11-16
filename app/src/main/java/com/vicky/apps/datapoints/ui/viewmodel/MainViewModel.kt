@@ -24,7 +24,7 @@ class MainViewModel(private val repository: Repository,
 
     private lateinit var compositeDisposable: CompositeDisposable
 
-
+    fun getData():List<SongsListResponse> = data
 
     private var ascendingVal:Boolean = false
 

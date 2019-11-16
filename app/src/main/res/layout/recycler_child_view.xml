@@ -12,11 +12,12 @@
 
     <ImageView
             android:id="@+id/coverPic"
-            android:layout_width="@dimen/DP_150"
-            android:layout_height="@dimen/DP_150"
+            android:layout_width="150dp"
+            android:layout_height="100dp"
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
+            android:scaleType="fitCenter"
             tool:layout_constraintEnd_toEndOf="parent"
             tool:layout_constraintStart_toStartOf="parent"
             tool:layout_constraintTop_toTopOf="parent"
@@ -25,10 +26,10 @@
 
     <ImageView
             android:id="@+id/playIcon"
-            android:layout_width="@dimen/DP_40"
-            android:layout_height="@dimen/DP_40"
+            android:layout_width="@dimen/DP_24"
+            android:layout_height="@dimen/DP_24"
             android:layout_marginStart="8dp"
-            android:layout_marginBottom="8dp"
+            android:layout_marginBottom="16dp"
             android:src="@drawable/ic_play_circle_outline_black_24dp"
             tool:layout_constraintBottom_toBottomOf="@+id/coverPic"
             tool:layout_constraintStart_toStartOf="@+id/coverPic"></ImageView>
@@ -37,8 +38,8 @@
             android:id="@+id/songName"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
             android:textAlignment="center"
             android:textColor="@color/textColor"
             tool:layout_constraintBottom_toBottomOf="parent"
