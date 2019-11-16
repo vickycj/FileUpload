@@ -30,7 +30,6 @@ class MainActivity : BaseActivity() {
     lateinit var factory: ViewModelProviderFactory
 
     private lateinit var viewModel:MainViewModel
-
     private lateinit var recyclerView: RecyclerView
 
     private lateinit var adapter: DataAdapter
@@ -69,14 +68,14 @@ class MainActivity : BaseActivity() {
 
 
 
-       // viewModel.getDataFromRemote()
+        viewModel.getDataFromRemote()
     }
 
     private fun sortAndUpdateData() {
         updateData()
     }
     private fun successCallback(){
-        updateData()
+       // updateData()
     }
 
     private fun updateData(){

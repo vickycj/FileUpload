@@ -2,5 +2,5 @@ package com.vicky.apps.datapoints.base
 
 object NetworkConstant {
 
-    val BASE_URL = "https://google.com"
+    val BASE_URL = "http://starlord.hackerearth.com/"
 }
